@@ -2,12 +2,13 @@ interface CardProps {
   title: string;
   text: string;
   background: string;
+  href: string;
 }
 
-function Card({ title, text, background }: CardProps) {
+function Card({ title, text, background, href }: CardProps) {
   return (
     <div className="mt-3 shadow-2xl transform transition duration-300 hover:scale-105 cursor-pointer">
-      <a className="relative gradient">
+      <a className="relative gradient" href={href}>
         <div className="absolute top-3/4 left-1/2 translate text-white -translate-x-1/2 -translate-y-1/2 z-10">
           <h2 className="mb-2 text-2xl font-bold tracking-tight text-center">
             {title}

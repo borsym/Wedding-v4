@@ -8,6 +8,7 @@ function LandingPage() {
   return (
     <div className="relativ">
       <div className="bg-landing-page h-screen w-full bg-cover bg-center brightness-90">
+        {/* talan egy hullamos atvagas a kepben??*/}
         <Navbar /> {/* Ez itt nagyon rossz helyen van!*/}
         <HeroSection />
       </div>
