@@ -7,17 +7,17 @@ interface CardProps {
 
 function Card({ title, text, background, href }: CardProps) {
   return (
-    <div className="mt-3 shadow-2xl transform transition duration-300 hover:scale-105 cursor-pointer">
+    <figure className="mt-3 shadow-2xl transform  transition-all duration-300 filter grayscale hover:grayscale-0 hover:scale-105 cursor-pointer">
       <a className="relative gradient" href={href}>
-        <div className="absolute top-3/4 left-1/2 translate text-white -translate-x-1/2 -translate-y-1/2 z-10">
-          <h2 className="mb-2 text-2xl font-bold tracking-tight text-center">
-            {title}
-          </h2>
-          <span className="font-normal">{text}</span>
-        </div>
         <img src={background} alt="landing-background" className="test" />
       </a>
-    </div>
+      <figcaption className="absolute top-3/4 left-1/2 translate text-white -translate-x-1/2 -translate-y-1/2 z-10">
+        <h2 className="mb-2 text-2xl font-bold tracking-tight text-center">
+          {title}
+        </h2>
+        <span className="font-normal">{text}</span>
+      </figcaption>
+    </figure>
   );
 }
 

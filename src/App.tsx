@@ -13,7 +13,7 @@ function App() {
   return (
     <>
       <LandingPage />
-      {/* nem jo a box shadow amiatt mert rounded a cucc!! sarkoknal latszik*/}
+
       <div className="flex flex-row justify-evenly align-baseline flex-wrap relative bg-[#EDE4D8] pb-10">
         {cardsData.map(({ title, text, image, href }, idx) => (
           <Card
@@ -30,6 +30,7 @@ function App() {
       </div>
       <AboutMe />
       <VideoGalery />
+
       <div>
         {/* bal oldalt conact info olyan ami figmaban van egymas alatt legyenek a dolgok, a masik odlalt meg terkep lesz */}
 

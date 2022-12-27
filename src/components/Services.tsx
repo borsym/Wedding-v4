@@ -3,7 +3,7 @@ import { BsFillSuitHeartFill } from 'react-icons/bs';
 import { GiBigDiamondRing } from 'react-icons/gi';
 import { servicesData } from '../data/data';
 
-// ELBASSZA A RESZPONZIVITAST
+// szines vektor grafika 
 function Services() {
   return (
     <div className="bg-gradient-to-b from-[#e3dace] to-[#EDE4D8] flex flex-row max-sm:flex-col pt-8 pb-12 items-center relative align-baseline">
