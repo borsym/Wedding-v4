@@ -1,3 +1,4 @@
+import { motion, useAnimation } from 'framer-motion';
 import React, { useEffect, useRef } from 'react';
 
 type Props = {};
@@ -8,6 +9,7 @@ type Props = {};
 
 export default function Navbar(props: Props) {
   const navbarRef = useRef(null);
+
   function handleScroll() {
     const navbar: any = navbarRef.current;
 
@@ -40,9 +42,14 @@ export default function Navbar(props: Props) {
             className="h-6 mr-3 sm:h-9"
             alt="Flowbite Logo"
           /> */}
-          <span className="self-center text-xl font-semibold whitespace-nowrap text-white">
+          <motion.span
+            className="self-center text-xl font-semibold whitespace-nowrap text-white"
+            initial={{ opacity: 0, scale: 0.5, y: -100 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            transition={{ delay: 0.3 }}
+          >
             BorsyVideo
-          </span>
+          </motion.span>
         </a>
         <button
           data-collapse-toggle="navbar-default"
@@ -68,7 +75,12 @@ export default function Navbar(props: Props) {
         </button>
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
-            <li>
+            <motion.li
+              initial={{ opacity: 0, scale: 0.5, x: -100 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.2 }}
+              // TODO mintha kis kepernyokon elbaszodna az animacio..
+            >
               <a
                 href="#"
                 className="block py-2 pl-3 pr-4 text-white md:p-0 hover-underline-animation tracking-[.3em]
@@ -77,39 +89,55 @@ export default function Navbar(props: Props) {
               >
                 Home
               </a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0, scale: 0.5, x: -100 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.35 }}
+            >
               <a
                 href="#"
                 className="block py-2 pl-3 pr-4 md:p-0 text-white hover-underline-animation tracking-[.3em] font-bold leading-tight"
               >
                 About
               </a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0, scale: 0.5, x: -100 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <a
                 href="#"
                 className="block py-2 pl-3 pr-4 md:p-0 text-white hover-underline-animation tracking-[.3em] font-bold leading-tight"
               >
                 Services
               </a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0, scale: 0.5, x: -100 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 0.75 }}
+            >
               <a
                 href="#"
                 className="block py-2 pl-3 pr-4 md:p-0 text-white hover-underline-animation tracking-[.3em] font-bold leading-tight"
               >
                 Pricing
               </a>
-            </li>
-            <li>
+            </motion.li>
+            <motion.li
+              initial={{ opacity: 0, scale: 0.5, x: -100 }}
+              animate={{ opacity: 1, scale: 1, x: 0 }}
+              transition={{ duration: 1 }}
+            >
               <a
                 href="#"
                 className="block py-2 pl-3 pr-4 md:p-0 text-white hover-underline-animation tracking-[.3em] font-bold leading-tight"
               >
                 Contact
               </a>
-            </li>
+            </motion.li>
           </ul>
         </div>
       </div>

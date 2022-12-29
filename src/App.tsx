@@ -20,15 +20,19 @@ function App() {
       {/* <main> */}
       <LandingPage />
       <div className="flex flex-row justify-evenly align-baseline flex-wrap relative bg-[#EDE4D8] pb-10">
-        {cardsData.map(({ title, text, image, href }, idx) => (
-          <Card
-            title={title}
-            text={text}
-            background={image}
-            href={href}
-            key={idx}
-          />
-        ))}
+        {cardsData.map(
+          ({ title, text, image, href, xCordForAnimation }, idx) => (
+            <Card
+              title={title}
+              text={text}
+              background={image}
+              href={href}
+              key={idx}
+              idx={idx}
+              xCordForAnimation={xCordForAnimation}
+            />
+          )
+        )}
       </div>
       <Services />
       <AboutMe />

@@ -1,9 +1,15 @@
+import { motion } from 'framer-motion';
+
 function HeroSection() {
   return (
     // navbar nem lehet ebben
-    <main>
+    <motion.main
+      initial={{ x: '100vw' }}
+      animate={{ x: 0 }}
+      transition={{ delay: 0.5, type: 'spring', stiffness: 50 }}
+    >
       <section>
-        <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
+        <div className="grid max-w-screen-xl px-4 py-28 mx-auto lg:gap-8 xl:gap-0 lg:py-44 lg:grid-cols-12">
           <div className="mr-auto place-self-center lg:col-span-7">
             <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl text-white">
               Where <span className="text-yellow-300">dreams</span> come true
@@ -30,12 +36,14 @@ function HeroSection() {
                 ></path>
               </svg>
             </a>
-            <a
+            <motion.a
               href="#"
               className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-yellow-500 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
               Contact us
-            </a>
+            </motion.a>
             {/* <button
             type="button"
             className="text-gray-900 hover:text-white border border-gray-800 hover:bg-gray-900 focus:ring-4 focus:outline-none focus:ring-gray-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center mr-2 mb-2 dark:border-gray-600 dark:text-gray-400 dark:hover:text-white dark:hover:bg-gray-600 dark:focus:ring-gray-800"
@@ -45,7 +53,7 @@ function HeroSection() {
           </div>
         </div>
       </section>
-    </main>
+    </motion.main>
   );
 }
 

@@ -1,13 +1,34 @@
+import { motion } from 'framer-motion';
+
 interface CardProps {
+  idx: number;
   title: string;
   text: string;
   background: string;
   href: string;
+  xCordForAnimation: number;
 }
 
-function Card({ title, text, background, href }: CardProps) {
+function Card({
+  title,
+  text,
+  background,
+  href,
+  xCordForAnimation,
+  idx,
+}: CardProps) {
   return (
-    <figure className="mt-3 shadow-2xl transform  transition-all duration-300 filter grayscale hover:grayscale-0 hover:scale-105 cursor-pointer">
+    <motion.figure
+      className="mt-3 shadow-2xl transform  transition-all duration-300 filter grayscale hover:grayscale-0  cursor-pointer"
+      whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+      initial={{ opacity: 0, x: xCordForAnimation }}
+      whileInView={{
+        opacity: 1,
+        scale: 1,
+        x: 0,
+      }}
+      transition={{ duration: 0.1 * idx }}
+    >
       <a className="relative gradient" href={href}>
         <img src={background} alt="landing-background" className="test" />
       </a>
@@ -17,7 +38,7 @@ function Card({ title, text, background, href }: CardProps) {
         </h2>
         <span className="font-normal">{text}</span>
       </figcaption>
-    </figure>
+    </motion.figure>
   );
 }
 

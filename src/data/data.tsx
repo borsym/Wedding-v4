@@ -9,18 +9,21 @@ export const cardsData = [
     text: 'Love Captured Forever',
     image: LandingBackground,
     href: '#',
+    xCordForAnimation: -100,
   },
   {
     title: 'Adventure',
     text: "Love's Epic Journey",
     image: LandingBackground,
     href: '#',
+    xCordForAnimation: -300,
   },
   {
     title: 'Myth',
     text: "You're Greatest Story",
     image: LandingBackground,
     href: '#',
+    xCordForAnimation: -300,
   },
 ];
 
