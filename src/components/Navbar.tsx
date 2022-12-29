@@ -1,10 +1,38 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
 type Props = {};
 
+// TODO
+// hide the navbar when the user scrolls down
+// show the navbar when the user scrolls up or stops
+
 export default function Navbar(props: Props) {
+  const navbarRef = useRef(null);
+  function handleScroll() {
+    const navbar: any = navbarRef.current;
+
+    if (window.scrollY > 0) {
+      navbar.style.backgroundColor = '#333';
+      // navbar.style.display = 'none';
+    } else {
+      navbar.style.backgroundColor = 'transparent';
+      // navbar.style.display = 'block';
+    }
+  }
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
   return (
-    <nav className="sm:pl-24 sm:py-12 max-md:px-2 max-md:py-2.5 uppercase">
+    <nav
+      className="px-2 sm:px-4 py-2.5 fixed w-full z-20 top-0 left-0 uppercase block"
+      ref={navbarRef}
+    >
       <div className="container flex flex-wrap items-center max-sm:justify-between mx-auto">
         <a href="#" className="flex items-center pr-6">
           {/* <img

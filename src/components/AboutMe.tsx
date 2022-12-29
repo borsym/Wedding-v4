@@ -32,12 +32,12 @@ function AboutMe() {
   }, []);
 
   return (
-    <section className="bg-white break-words">
-      <h1 className="text-center text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl mb-8">
+    <section className="bg-white break-words pt-8">
+      <h1 className="text-center text-4xl font-extrabold tracking-tight md:text-5xl xl:text-6xl mb-8 break-words leading-relaxed">
         Dedicated, Fun-Loving Wedding Videographer
       </h1>
       <div className="flex justify-center">
-        <p className=" max-w-2xl font-light text-gray-500  md:text-lg lg:text-xl">
+        <p className=" max-w-2xl font-light text-gray-500  md:text-lg lg:text-xl break-words mb-6 tracking-wide leading-snug">
           Hello! My name is Béla Borsy and I am a wedding videographer with a
           passion for capturing the most special moments in a couple's life.
           When I'm not busy editing the perfect shot, you can catch me cracking
@@ -54,7 +54,7 @@ function AboutMe() {
         >
           Start together
           <svg
-            className="w-5 h-5 ml-2 -mr-1"
+            className="move-arrow w-5 h-5 ml-2 -mr-1"
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"
@@ -76,36 +76,28 @@ function AboutMe() {
       <div className="image-grid h-[600px] relative">
         <div
           ref={(el) => (images.current[0] = el)}
-          className={`image-1 relative`}
+          className={`image image-1 relative`}
           data-way="1"
           data-rate="0.8"
-        >
-          a
-        </div>
+        />
         <div
           ref={(el) => (images.current[1] = el)}
-          className={`image-2`}
+          className={`image image-2`}
           data-way="1"
           data-rate="1.1"
-        >
-          b
-        </div>
+        />
         <div
           ref={(el) => (images.current[2] = el)}
-          className={`image-3`}
+          className={`image image-3`}
           data-way="-1"
           data-rate="2"
-        >
-          c
-        </div>
+        />
         <div
           ref={(el) => (images.current[3] = el)}
-          className={`image-4`}
+          className={`image image-4`}
           data-way="-1"
-          data-rate="0.8"
-        >
-          d
-        </div>
+          data-rate="1.3"
+        />
       </div>
     </section>
   );

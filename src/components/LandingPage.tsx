@@ -1,7 +1,6 @@
 import React from 'react';
 import LandingBackground from '../assets/landing-background.png';
 import LandingBackgroundPlaceholder from '../assets/landing-background-blur.png';
-import Navbar from './Navbar';
 import HeroSection from './HeroSection';
 
 function LandingPage() {
@@ -9,7 +8,7 @@ function LandingPage() {
     <div className="relativ">
       <div className="bg-landing-page h-screen w-full bg-cover bg-center brightness-90">
         {/* talan egy hullamos atvagas a kepben??*/}
-        <Navbar /> {/* Ez itt nagyon rossz helyen van!*/}
+        {/* Ez itt nagyon rossz helyen van!*/}
         <HeroSection />
       </div>
     </div>

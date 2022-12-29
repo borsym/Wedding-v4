@@ -72,35 +72,55 @@ body {
   object-position: center;
 }
 
+.image {
+  background-size: cover;
+  object-fit: cover;
+}
+
 .image-1 {
-  /* the background picture */
-  background-color: red;
   grid-row: 1 / 5;
   grid-column: 3 / 7;
+  background-image: url('./assets/funny.jpg');
 }
 
 .image-2 {
-  /* background-image: url('./assets/funny.jpg'); */
-  background-color: blue;
+  background-image: url('./assets/jump.jpg');
   grid-row: 3 / 6;
   grid-column: 2 / 4;
   z-index: 2;
 }
 
 .image-3 {
-  /* background-image: url('./assets/funny.jpg'); */
-  background-color: yellow;
   grid-row: 6 / 9;
   grid-column: 4 / 6;
   z-index: 2;
+  background-image: url('./assets/surprised.jpg');
 }
 
 .image-4 {
-  /* background-image: url('./assets/funny.jpg'); */
   background-color: purple;
-  grid-row: 2 / 7;
+  grid-row: 4 / 9;
   grid-column: 6 / 8;
   z-index: 2;
+  background-image: url('./assets/stand.jpg');
+}
+
+@media (max-width: 600px) {
+  .image-grid {
+    gap: 0rem;
+  }
+  .image-1 {
+    grid-row: 1 / 4;
+    grid-column: 1 / -1;
+  }
+  .image-2 {
+    grid-row: 3 / 7;
+    grid-column: 1 / -1;
+  }
+  .image-3,
+  .image-4 {
+    display: none;
+  }
 }
 
 .mapWrapper {
@@ -117,18 +137,18 @@ body {
   height: 100%;
 }
 
-.move-up-down {
-  animation: move-up-down 4s ease-in-out infinite;
+.move-arrow {
+  animation: move-arrow 1s ease-in-out infinite;
 }
 
-@keyframes move-up-down {
+@keyframes move-arrow {
   0% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
   50% {
-    transform: translateY(-10px);
+    transform: translateX(-4px);
   }
   100% {
-    transform: translateY(0);
+    transform: translateX(0);
   }
 }
