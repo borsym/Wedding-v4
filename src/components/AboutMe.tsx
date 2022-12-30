@@ -38,7 +38,6 @@ function AboutMe() {
     };
   }, []);
 
-  console.log(imagesPostion);
   return (
     <section className="bg-white break-words pt-8">
       <h1 className="text-center text-4xl font-extrabold tracking-tight md:text-5xl xl:text-6xl mb-8 break-words leading-relaxed">

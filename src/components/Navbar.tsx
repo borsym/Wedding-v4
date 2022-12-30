@@ -1,5 +1,9 @@
-import { motion, useAnimation } from 'framer-motion';
-import React, { useEffect, useRef } from 'react';
+import { motion, useAnimation, useCycle } from 'framer-motion';
+import React, { useEffect, useRef, useState } from 'react';
+import { GiHamburgerMenu } from 'react-icons/gi';
+import { AiOutlineClose } from 'react-icons/ai';
+import { MenuToggle } from './hamburger/MenuToggle';
+import { NavMenu } from './hamburger/HamburgerNavMenu';
 
 type Props = {};
 
@@ -7,8 +11,30 @@ type Props = {};
 // hide the navbar when the user scrolls down
 // show the navbar when the user scrolls up or stops
 
+const menuVariants = {
+  open: {
+    transform: 'translateX(3%)',
+  },
+  closed: {
+    transform: 'translateX(103%)',
+  },
+};
+
+const menuTransition = {
+  type: 'spring',
+  duration: 1,
+  stiffness: 33,
+  delay: 0.1,
+};
+
 export default function Navbar(props: Props) {
   const navbarRef = useRef(null);
+  // const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setOpen(!isOpen);
+  };
 
   function handleScroll() {
     const navbar: any = navbarRef.current;
@@ -51,28 +77,27 @@ export default function Navbar(props: Props) {
             BorsyVideo
           </motion.span>
         </a>
-        <button
-          data-collapse-toggle="navbar-default"
-          type="button"
-          className="inline-flex items-center p-2 ml-3 text-sm text-white rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200"
-          aria-controls="navbar-default"
-          aria-expanded="false"
+        <motion.div
+          initial={false}
+          animate={isOpen ? 'open' : 'closed'}
+          className="inline-flex items-center text-sm text-white rounded-full md:hidden focus:outline-none relative"
         >
-          <span className="sr-only">Open main menu</span>
-          <svg
-            className="w-6 h-6"
-            aria-hidden="true"
-            fill="gold"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+          <MenuToggle toggle={toggleMenu} isOpen={isOpen} />
+          <motion.div
+            className="menu-container"
+            initial={false}
+            animate={isOpen ? 'open' : 'closed'}
+            variants={menuVariants}
+            transition={menuTransition}
           >
-            <path
-              fillRule="evenodd"
-              d="M3 5a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 10a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zM3 15a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1z"
-              clipRule="evenodd"
-            ></path>
-          </svg>
-        </button>
+            {/* <motion.div className="top-container text-black">
+              BorsyVideo
+            </motion.div> */}
+            <motion.div className="content-container">
+              <NavMenu isOpen={isOpen} />
+            </motion.div>
+          </motion.div>
+        </motion.div>
         <div className="hidden w-full md:block md:w-auto" id="navbar-default">
           <ul className="flex flex-col p-4 mt-4 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium">
             <motion.li

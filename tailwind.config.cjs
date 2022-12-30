@@ -10,6 +10,8 @@ module.exports = {
     extend: {
       backgroundImage: {
         'landing-page': "url('/src/assets/landing-background.png')",
+        'landing-page2': "url('/src/assets/walking.png')",
+        'landing-page3': "url('/src/assets/forest.png')",
         'landing-page-blur': "url('/src/assets/landing-background-blur.png')",
       },
     },

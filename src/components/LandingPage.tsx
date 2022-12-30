@@ -6,7 +6,7 @@ import HeroSection from './HeroSection';
 function LandingPage() {
   return (
     <div className="relativ">
-      <div className="bg-landing-page h-screen w-full bg-cover bg-center brightness-90">
+      <div className="bg-landing-page3 h-screen w-full bg-cover bg-center brightness-90">
         <HeroSection />
       </div>
     </div>
