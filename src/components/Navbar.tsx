@@ -14,7 +14,7 @@ export default function Navbar(props: Props) {
     const navbar: any = navbarRef.current;
 
     if (window.scrollY > 0) {
-      navbar.style.backgroundColor = '#333';
+      navbar.style.backgroundColor = '#262322';
       // navbar.style.display = 'none';
     } else {
       navbar.style.backgroundColor = 'transparent';
@@ -99,7 +99,7 @@ export default function Navbar(props: Props) {
                 href="#"
                 className="block py-2 pl-3 pr-4 md:p-0 text-white hover-underline-animation tracking-[.3em] font-bold leading-tight"
               >
-                About
+                Services
               </a>
             </motion.li>
             <motion.li
@@ -111,19 +111,7 @@ export default function Navbar(props: Props) {
                 href="#"
                 className="block py-2 pl-3 pr-4 md:p-0 text-white hover-underline-animation tracking-[.3em] font-bold leading-tight"
               >
-                Services
-              </a>
-            </motion.li>
-            <motion.li
-              initial={{ opacity: 0, scale: 0.5, x: -100 }}
-              animate={{ opacity: 1, scale: 1, x: 0 }}
-              transition={{ duration: 0.75 }}
-            >
-              <a
-                href="#"
-                className="block py-2 pl-3 pr-4 md:p-0 text-white hover-underline-animation tracking-[.3em] font-bold leading-tight"
-              >
-                Pricing
+                About
               </a>
             </motion.li>
             <motion.li

@@ -2,24 +2,31 @@ import { useEffect, useRef, useState } from 'react';
 import { MotionConfig, motion, useScroll } from 'framer-motion';
 function AboutMe() {
   const images = useRef<any>([]);
-
+  const [imagesPostion, setIMagesPosition] = useState<any>([]);
   var windowHeight = window.innerHeight;
   var windowWidth = window.innerWidth;
   var scrollArea = 1000 - windowHeight; // ?
 
   const onScroll = () => {
-    images.current.forEach((image: any) => {
+    images.current.forEach((image: any, idx: any) => {
       var scrollTop: any = window.pageYOffset || (window as any).scrollTop;
       var scrollPercent = scrollTop / scrollArea || 0;
 
       const way = parseInt(image.dataset.way);
       const rate = parseInt(image.dataset.rate);
+      // use the foreach idx to set the state
+      setIMagesPosition((prevState: any) => {
+        return {
+          ...prevState,
+          [idx]: way * (scrollPercent * 15 * rate),
+        };
+      });
 
       image.style.transform =
         'translateY(' + way * (scrollPercent * 15 * rate) + 'px)';
-      image.style.transform = `translateY('${
-        way * (scrollPercent * 15 * rate)
-      }'px)`;
+      // image.style.transform = `translateY('${
+      //   way * (scrollPercent * 15 * rate)
+      // }'px)`;
     });
   };
 
@@ -31,6 +38,7 @@ function AboutMe() {
     };
   }, []);
 
+  console.log(imagesPostion);
   return (
     <section className="bg-white break-words pt-8">
       <h1 className="text-center text-4xl font-extrabold tracking-tight md:text-5xl xl:text-6xl mb-8 break-words leading-relaxed">
@@ -66,35 +74,37 @@ function AboutMe() {
             ></path>
           </svg>
         </a>
-        <a
+        <motion.a
           href="#"
-          className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+          className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100"
+          whileHover={{ scale: 1.1 }}
+          whileTap={{ scale: 0.9 }}
         >
           Contact me
-        </a>
+        </motion.a>
       </div>
       <div className="image-grid h-[600px] relative">
-        <div
+        <motion.div
           ref={(el) => (images.current[0] = el)}
-          className={`image image-1 relative`}
+          className={`image image-1 relative huge-shadow`}
           data-way="1"
           data-rate="0.8"
         />
-        <div
+        <motion.div
           ref={(el) => (images.current[1] = el)}
-          className={`image image-2`}
+          className={`image image-2 huge-shadow`}
           data-way="1"
           data-rate="1.1"
         />
-        <div
+        <motion.div
           ref={(el) => (images.current[2] = el)}
-          className={`image image-3`}
+          className={`image image-3 huge-shadow`}
           data-way="-1"
           data-rate="2"
         />
-        <div
+        <motion.div
           ref={(el) => (images.current[3] = el)}
-          className={`image image-4`}
+          className={`image image-4 huge-shadow`}
           data-way="-1"
           data-rate="1.3"
         />

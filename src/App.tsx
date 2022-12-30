@@ -18,8 +18,9 @@ function App() {
       {/*  dark:border-gray-600 */}
       <Navbar />
       {/* <main> */}
+      {/* bg-gradient-to-b from-[#FFE9CF] to-[#f5f1ec] */}
       <LandingPage />
-      <div className="flex flex-row justify-evenly align-baseline flex-wrap relative bg-[#EDE4D8] pb-10">
+      <div className="flex flex-row justify-evenly align-baseline flex-wrap relative bg-white pb-10">
         {cardsData.map(
           ({ title, text, image, href, xCordForAnimation }, idx) => (
             <Card

@@ -1,6 +1,8 @@
+import { motion } from 'framer-motion';
+
 function ContactUs() {
   return (
-    <section className="bg-slate-300">
+    <section className="bg-gradient-to-b from-[#FFE9CF] to-[#f5f1ec]">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">
           Contact Us
@@ -98,12 +100,14 @@ function ContactUs() {
             ></textarea>
           </div>
           <div className="text-center">
-            <button
+            <motion.button
               type="submit"
-              className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-900 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+              className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-900 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 "
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
             >
               Contact me
-            </button>
+            </motion.button>
           </div>
         </form>
       </div>

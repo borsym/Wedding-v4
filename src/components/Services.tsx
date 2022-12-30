@@ -8,7 +8,8 @@ import { motion } from 'framer-motion';
 function Services() {
   return (
     <div className="flex flex-col items-center flex-wrap">
-      <div className="bg-gradient-to-b from-[#e3dace] to-[#EDE4D8] flex flex-row max-sm:flex-col pt-8 pb-12 items-center relative align-baseline">
+      {/* #FFE9CF */}
+      <div className="bg-gradient-to-b from-[#FFE9CF] to-[#f5f1ec] flex flex-row max-sm:flex-col pt-8 pb-12 items-center relative align-baseline">
         {servicesData.map(({ title, paragraph, icon }, idx) => (
           <Service title={title} icon={icon} paragraph={paragraph} key={idx} />
         ))}
@@ -30,10 +31,14 @@ function Service({ title, icon, paragraph }: ServiceProps) {
   return (
     <motion.div
       className="flex items-center flex-col"
-      // when the element is in view, animate it fade in and slide up
-      initial={{ opacity: 0, y: 100 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.7 }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={{
+        visible: { opacity: 1, scale: 1, y: 0 },
+        hidden: { opacity: 0, scale: 0, y: 100 },
+      }}
     >
       {icon}
       <h2 className=" font-bold text-gray-800 mb-5 align-baseline">{title}</h2>

@@ -16,7 +16,7 @@ export const cardsData = [
     text: "Love's Epic Journey",
     image: LandingBackground,
     href: '#',
-    xCordForAnimation: -300,
+    xCordForAnimation: -200,
   },
   {
     title: 'Myth',

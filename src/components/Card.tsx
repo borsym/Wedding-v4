@@ -21,13 +21,14 @@ function Card({
     <motion.figure
       className="mt-3 shadow-2xl transform  transition-all duration-300 filter grayscale hover:grayscale-0  cursor-pointer"
       whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-      initial={{ opacity: 0, x: xCordForAnimation }}
-      whileInView={{
-        opacity: 1,
-        scale: 1,
-        x: 0,
-      }}
       transition={{ duration: 0.1 * idx }}
+      initial="hidden"
+      whileInView="visible"
+      viewport={{ once: true }}
+      variants={{
+        visible: { opacity: 1, scale: 1, x: 0 },
+        hidden: { opacity: 0, scale: 0, x: xCordForAnimation },
+      }}
     >
       <a className="relative gradient" href={href}>
         <img src={background} alt="landing-background" className="test" />
