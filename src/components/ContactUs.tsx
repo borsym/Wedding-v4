@@ -2,14 +2,13 @@ import { motion } from 'framer-motion';
 
 function ContactUs() {
   return (
-    <section className="bg-gradient-to-b from-[#FFE9CF] to-[#f5f1ec]">
+    <section className="bg-gradient-to-b from-[#FFE9CF] to-[#f5f1ec] test2">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
         <h2 className="mb-4 text-4xl tracking-tight font-extrabold text-center text-gray-900">
           Contact Me
         </h2>
         <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
-          Got a technical issue? Want to send feedback about a beta feature?
-          Need details about our Business plan? Let us know.
+          lorem ipsum
         </p>
         <form action="#" className="space-y-8">
           <div>
@@ -102,7 +101,7 @@ function ContactUs() {
           <div className="text-center">
             <motion.button
               type="submit"
-              className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-900 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 "
+              className="bg-white inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-purple-600 border border-gray-300 rounded-lg hover:text-purple-800 hover:bg-yellow-300 focus:ring-4 focus:ring-gray-100 "
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.9 }}
             >

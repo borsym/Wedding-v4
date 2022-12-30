@@ -206,9 +206,21 @@ body {
   align-items: center;
   cursor: pointer;
 }
+
 .nav-link a {
   color: #252525;
   text-decoration: none;
   font-size: 20px;
   transition: color 0.2s ease-in-out;
+}
+
+.test2 {
+  /* background-image: url('./assets/Scene-7.jpg'); */
+  /* background-image: url('./assets/log.jpg'); */
+  /* background-image: url('./assets/mails.jpg'); */
+  /* background-image: url('./assets/contant_bird.jpg'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  object-fit: cover;
 }

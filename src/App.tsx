@@ -37,7 +37,7 @@ function App() {
       </div>
       <Services />
       <AboutMe />
-      <VideoGalery />
+      {/* <VideoGalery /> */}
       <ContactUs />
       <MapOfLocation />
       {/* </main> */}
