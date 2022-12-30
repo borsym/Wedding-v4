@@ -1,6 +1,30 @@
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 function ContactUs() {
+  const form = useRef<any>();
+
+  const sendEmail = (e: any) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        'YOUR_SERVICE_ID',
+        'YOUR_TEMPLATE_ID',
+        form.current,
+        'YOUR_PUBLIC_KEY'
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+  };
+
   return (
     <section className="bg-gradient-to-b from-[#FFE9CF] to-[#f5f1ec] test2">
       <div className="py-8 lg:py-16 px-4 mx-auto max-w-screen-md">
@@ -10,7 +34,7 @@ function ContactUs() {
         <p className="mb-8 lg:mb-16 font-light text-center text-gray-500 dark:text-gray-400 sm:text-xl">
           lorem ipsum
         </p>
-        <form action="#" className="space-y-8">
+        <form action="#" className="space-y-8" ref={form} onSubmit={sendEmail}>
           <div>
             <label
               htmlFor="text"
